@@ -3,7 +3,7 @@ pipeline{
     stages{
        stage('Git Checkout Stage'){
             steps{
-                git branch: 'master', url: 'https://github.com/sudheer76R/Calculator-java.git'
+                git branch: 'master', url: 'https://github.com/AmruthKalva/Sud-Calculator-java.git'
             }
          }        
        stage('Build Stage'){
@@ -14,7 +14,7 @@ pipeline{
         stage('SonarQube Analysis Stage') {
             steps{
                 withSonarQubeEnv('sonar') { 
-                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-sinar"
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=calc"
                 }
             }
         }
